@@ -9,10 +9,10 @@ import util.operation.tree.BST;
  */
 public class TestRecursiveSolution {
     public static void main(String[] args) {
-        int []nums = {1,4,5,6,7,8,9};
+        int []nums = {1,4,6,7,8,9};
         RecursiveSolution recursiveSolution = new RecursiveSolution();
         TreeNode root = recursiveSolution.sortedArrayToBST(nums);
-        BST.inOrder(root);
-        BST.inOrderNonRecursive(root);
+        BST.postOrder(root);
+        BST.postOrderNonRecursive(root);
     }
 }

@@ -1,16 +1,18 @@
 title：
 108. Convert Sorted Array to Binary Search Tree
 
-description:
+###108. Convert Sorted Array to Binary Search Tree
 
 Given an array where elements are sorted in ascending order,
 convert it to a height balanced BST.
 
 Subscribe to see which companies asked this question.
 
-递归解法：
+####思路：
 RecursiveSolution:
+
 这道题用递归来解比较简洁。
+
 二叉查找树的中序遍历会得到一个有序的数组。用一个有序的数组来构建二叉查找树则只需将数组的中点
 作为树根，左子数组的中点作为左子树的树根，右子数组作为右子树的树根。如此递归进行则可构建一棵
 二叉查找树。

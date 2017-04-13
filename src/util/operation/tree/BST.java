@@ -70,6 +70,47 @@ public final class BST  {
             x = x.right;
         }
     }
+    //后序遍历非递归实现
+    public static void postOrderNonRecursive(TreeNode x){
+        // TODO: 2017/4/13  
+        //往左下走 遇到null->pop()->if右孩子为空，打印该结点,将x;不为空则继续下一个循环
+        boolean flag=true;
+        Stack<TreeNode> stack = new Stack<>();
+        while(x!=null){
+            while (x.left!=null&&flag){
+                x = x.left;
+                stack.push(x);
+            }
+            if(!flag) {
+                x=stack.pop();
+                System.out.println(x.val);
+            }
+            if(x.right==null){
+                System.out.println(x.val);
+                x = stack.pop();
+                flag=false;
+            }
+            else {
+                x = x.right;
+                flag=true;
+            }
+        }
+    }
+
+    //从数组构造一棵二叉树
+    public static TreeNode buildBST(int[] nums) {
+        if(nums.length == 0) return null;
+        TreeNode root = buildBST(nums,0,nums.length-1);
+        return root;
+    }
+    private static TreeNode buildBST(int[] nums, int lo, int hi) {
+        if(lo > hi) return null;
+        int mid = (lo + hi)/2;
+        TreeNode node = new TreeNode(nums[mid]);
+        node.left = buildBST(nums,lo,mid-1);
+        node.right = buildBST(nums,mid+1,hi);
+        return node;
+    }
 
 }
 
