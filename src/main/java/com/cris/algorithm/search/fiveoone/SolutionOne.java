@@ -11,6 +11,7 @@ import java.util.Map;
  * Created by owen on 2017/4/13.
  */
 public class SolutionOne {
+
     int max=0;
     Map<Integer,Integer> map = new HashMap<>();
     public int[] findMode(TreeNode root) {
